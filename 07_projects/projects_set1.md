@@ -79,6 +79,8 @@ clock.innerHTML=date.toLocaleTimeString()
 
 ## Project 4...Guess Number Game
 
+
+
 ```javascript
 
  let randomNumber = parseInt(Math.random() * 100 + 1);
@@ -174,5 +176,69 @@ function newGame() {
   });
 }
 
+
+```
+
+## Project 5  ...
+
+```javascript
+
+// generate random color 
+
+const randomcolor = function(){
+    let hex = '0123456789ABCDEF';
+    let color =  '#';
+    for (let i = 0; i <6; i++) {
+        color += hex[Math.floor(Math.random()*16)]
+    }
+    return color;
+}
+let start ;
+
+const startchangingcolor=function(){
+    if (!start) {
+        start = setInterval(changeBGcolor,1000);   
+    }
+    
+
+function changeBGcolor (){
+    document.body.style.backgroundColor=randomcolor();
+}
+}
+
+document.querySelector('#start').addEventListener('click',startchangingcolor) 
+
+const stopchangingcolor = function(){
+clearTimeout(start)
+start = null;
+
+}
+
+document.querySelector('#stop').addEventListener('click',stopchangingcolor)  
+```
+
+## project 6
+
+```javascript
+
+document.getElementById('insert')
+window.addEventListener('keydown',(e)=>{
+    insert.innerHTML=`
+    <div class='color'>
+      <table>
+  <tr>
+    <th>key</th>
+    <th>key_code</th>
+    <th>code</th>
+  </tr>
+  <tr>
+    <td>${e.key === ' ' ? 'space': e.key }</td>
+    <td>${e.keyCode}</td>
+    <td>${e.code}</td>
+  </tr>
+  
+</table>
+</div> `
+})
 
 ```
